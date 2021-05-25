@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: seung-rachel-pipeline-from-scratch-pipeline-run
+spec:
+ pipelineRef:
+    name: seung-rachel-pipeline-from-scratch-pipeline
+  workspaces:
+   - name: pipeline-shared-data
+     persistentvolumeclaim:
+       claimName: seung-live-pvc
